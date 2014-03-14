@@ -19,7 +19,7 @@ f.close
 print(text)
 
 
-# Simbol counting function
+# Function for counting symbols:
 def count_symbols(text):
     symbols = {}
     for i in range(len(text)):
@@ -33,3 +33,23 @@ p = count_symbols(text)
 print(p)
 for i in sorted(p, key=p.get, reverse=True):
     print(str(p[i]) + str(i))
+
+
+# Function for counting words:
+def count_words(text):
+    new_word = ""
+    words = {}
+    for i in range(len(text)):
+        if text[i] in (' \n\'\".,?!()[]{}'):
+            if str(new_word) in  words and new_word != "":
+                words[str(new_word)] = words[str(new_word)] + 1
+            elif new_word != "":
+                words[str(new_word)] = 1
+            new_word = ""
+        else:
+            new_word = str(new_word) + str(text[i])
+    return words
+# Temponary printing:
+w = count_words(text)
+for i in sorted(w, key=w.get, reverse=True):
+    print(str(w[i]) + str(i))
