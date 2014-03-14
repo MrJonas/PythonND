@@ -11,3 +11,9 @@ elif not os.path.isdir(sys.argv[1]):
     quit()
 else:
     directory_path = sys.argv[1]
+# Temponary text file:
+text_path = "/home/jonas/progr/1.txt"
+f = open(text_path, 'r')
+text = f.read()
+f.close
+print(text)
