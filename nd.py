@@ -72,5 +72,12 @@ for data in os.listdir(directory_path):
         stats_file.write('File:\n' + str(file_path))
         stats_file.write('\nSymbols statistics:\n')
         sum_symbols = dict_print(symbols, sum_symbols)
+# Prints directory statistics
+stats_file.write('Directory:\n' + str(directory_path))
+stats_file.write('\nWords statistics:\n')
+sum_words = dict_print(sum_words, sum_words)
+stats_file.write('Directory:\n' + str(directory_path))
+stats_file.write('\nSymbols statistics:\n')
+sum_symbols = dict_print(sum_symbols, sum_symbols)
 # Closes stats file:
 stats_file.close()
