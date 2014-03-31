@@ -13,8 +13,8 @@ else:
     directory_path = sys.argv[1]
 
 
-# Function for counting symbols:
 def count_symbols(text):
+    """Function for counting symbols"""
     symbols = {}
     for i in range(len(text)):
         if text[i] in symbols:
@@ -24,8 +24,8 @@ def count_symbols(text):
     return symbols
 
 
-# Function for counting words:
 def count_words(text):
+    """Function for counting words"""
     new_word = ""
     words = {}
     for i in range(len(text)):
@@ -40,8 +40,8 @@ def count_words(text):
     return words
 
 
-# Funtion to to write sorted dict to stats file:
 def dict_print(file_dict, sum_dict):
+    """Funtion to write sorted dict to stats file"""
     for key in sorted(file_dict, key=file_dict.get, reverse=True):
         if str(key) == " ":
             stats_file.write(str(file_dict[key]) + ' Space\n')
