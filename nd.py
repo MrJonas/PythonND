@@ -9,8 +9,15 @@ if len(sys.argv) < 2:
 elif not os.path.isdir(sys.argv[1]):
     print("Entered directory does not exists")
     quit()
+elif len(sys.argv) < 3:
+    print("Enter stat file name")
+    quit()
+elif (str(sys.argv[2]) + ".txt") in os.listdir(sys.argv[1]):
+    print("Entered file name already exist in speciefied directory")
+    quit()
 else:
     directory_path = sys.argv[1]
+    stats_file_name = str(sys.argv[2]) + ".txt"
 
 
 def count_symbols(text):
@@ -52,7 +59,7 @@ def dict_print(file_dict, sum_dict):
         sum_dict[key] = sum_dict.get(key, 0) + file_dict[key]
     return sum_dict
 # Creates stats file in specified directory:
-stats_file_path = str(directory_path) + str('Directory_Statistics.txt')
+stats_file_path = str(directory_path) + str(stats_file_name)
 stats_file = open(stats_file_path, 'w+')
 # Reads all files in specified directory:
 symbols = {}
